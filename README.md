@@ -1,9 +1,7 @@
 # RIMS
 Restaurant Information Management System
 
-# GROUP 13
-
-# GROUP MEMBERS
+## GROUP 13
 Phí Đoàn Minh Lương - BI12-258\
 Phạm Đỗ Ngọc Minh - BI12-280\
 Nguyễn Hoàng Nam - BI12-303\
