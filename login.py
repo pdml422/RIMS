@@ -9,26 +9,30 @@ def verify_login(t: Tk):
     entered_user = username_entry.get()
     entered_pass = password_entry.get()
     try:
-        with open("users.txt", "r") as file:
+        with open("data/users.txt", "r") as file:
             lines = file.readlines()
             for line in lines:
                 fields = line.split(",")
-                if fields[0] == entered_user and fields[1] == entered_pass:
-                    if fields[2] == "admin\n":
+                if fields[2] == entered_user and fields[3] == entered_pass:
+                    with open("data/log.txt", "w") as f:
+                        f.write(f"{fields[0]},{fields[2]}")
+
+                    if fields[4] == "admin":
                         messagebox.showinfo("", "Logged in as admin")
                         t.destroy()
                         call(["python", "admin.py"])
+                        return True
 
-                    elif fields[2] == "staff\n":
+                    elif fields[4] == "staff":
                         messagebox.showinfo("", "Logged in as staff")
                         t.destroy()
                         call(["python", "staff.py"])
+                        return True
 
     except Exception:
-        pass
+        return False
 
     messagebox.showerror("", "Invalid user or password")
-
 
 
 login = Tk()

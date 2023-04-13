@@ -1,0 +1,27 @@
+Starter,Escargot,12.0,0
+Starter,Beef Tartare,26.0,0
+Starter,Beked Camembert,15.0,0
+Starter,French Toasts,10.0,0
+Starter,Zucchini Flan,15.0,0
+Soup,French Onion Soup,11.0,0
+Soup,Tomato Bisque,10.0,0
+Soup,Classic Vuchyssoise,15.0,0
+Soup,Soup au Champignons,20.0,0
+Soup,French Pumpkin Soup,15.0,0
+Pasta,Chicken Mushroom Alfredo,18.0,0
+Pasta,Spaghetti & Meat Sauce,15.0,0
+Pasta,Lasagna,16.0,0
+Pasta,Jambalaya Fettuccine,22.0,0
+Pasta,Vegetarian Stir Fry,12.0,0
+Steak,Beef Bouruignon,35.0,0
+Steak,Steak au Poivre,37.0,0
+Steak,Top Sirloin Steak,30.0,0
+Steak,Gardiane de Boeuf,37.0,0
+Dessert,Chocolate Cheesecake,11.0,0
+Dessert,Profiters,12.0,0
+Dessert,Macaron,13.0,0
+Dessert,Ice Cream Sundae,10.0,0
+Salad,Smoked Duck & Rocker Salad,10.0,0
+Salad,Salad Dua Hanh,99.0,0
+Salad,Tropical Fruit Salad,13.0,0
+Salad,Warm Goat Cheese Salad,12.0,0
