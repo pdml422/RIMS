@@ -2,6 +2,7 @@ from tkinter import *
 from subprocess import call
 from tkinter import messagebox
 
+
 order = Tk()
 order.title("Order")
 order.geometry("960x540")
@@ -129,17 +130,35 @@ def remove_order():
 
 
 def bill():
+
+    with open("data/menu.txt") as f1, open("data/order.txt") as f2:
+        lines2 = f2.readlines()
+        lines1 = f1.readlines()
+        for line2 in lines2:
+            fields2 = line2.split(",")
+            name2 = fields2[1]
+            quantity = fields2[3]
+
+            for i, line1 in enumerate(lines1):
+                fields1 = line1.split(",")
+                category = fields1[0]
+                name1 = fields1[1]
+                price = fields1[2]
+                sold_old = fields1[3]
+
+                if name2 in line1:
+                    lines1[i] = f"{category},{name1},{price},{int(sold_old) + int(quantity)}\n"
+                    break
+
+    with open("data/menu.txt", "w") as f1:
+        for line in lines1:
+            f1.write(line)
+
     call(["python", "bill.py"])
     display_order()
 
 
-def back():
-    order.destroy()
-    call(["python", "admin.py"])
-
-
 Label(order, text="Order", font=('bold', 14), bg='#3D3D3D', fg='#FFD154').grid(row=0, column=5)
-
 
 # category
 category_text = StringVar()
@@ -191,9 +210,6 @@ display_menu()
 order_list.bind('<<ListboxSelect>>', select_order)
 display_order()
 
-# Button
-backBt = Button(order, text="BACK", command=back)
-backBt.place(x=3, y=3)
 
 atoBt = Button(order, text="Add to order", command=ato)
 atoBt.grid(row=5, column=2, sticky=W)
@@ -203,6 +219,5 @@ removeBt.grid(row=6, column=5, sticky=W, padx=20)
 
 finish_orderBt = Button(order, text="Order", command=bill)
 finish_orderBt.grid(row=6, column=5, sticky=E, padx=20)
-
 
 order.mainloop()

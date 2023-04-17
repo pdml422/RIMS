@@ -11,7 +11,7 @@ report.configure(bg='#3D3D3D')
 
 
 def revenue():
-    pass
+    call(["python", "revenue.py"])
 
 
 def sort_dishes():

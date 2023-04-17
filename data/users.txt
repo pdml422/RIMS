@@ -2,3 +2,4 @@ Luong PHI,22/04/2003,admin,123,admin,0,0,0,0
 Nam NGUYEN,27/12/2003,staff1,123,staff,0,0,0,0
 Nam DANG,27/02/2003,staff2,123,staff,0,0,0,0
 Minh PHAM,28/03/2003,staff3,123,staff,9,14,6,132.00
+Nam VU,27/09/2003,staff4,123,staff,1,1,3,4.0

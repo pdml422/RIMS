@@ -112,15 +112,16 @@ def add_employee():
     if not check:
         messagebox.showerror("", "Please input float type")
 
-    employee_list.append(Employee(name, dob, username, password, role, coesalary, worktime, bonus))
-    with open("data/users.txt", "a") as f:
-        f.write(f"{name},{dob},{username},{password},{role},{coesalary},{worktime},{bonus},{salary}\n")
+    employee_list.append(Employee(name, dob, username, password, role, coesalary, worktime, bonus, salary))
+    with open("data/users.txt", "a") as user_write:
+        user_write.write(f"{name},{dob},{username},{password},{role},{coesalary},{worktime},{bonus},{salary}\n")
 
     clear()
     display()
 
+
 def update():
-    #input
+    # input
     name = name_entry.get()
     dob = dob_entry.get()
     username = username_entry.get()

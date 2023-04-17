@@ -10,8 +10,7 @@ staff.configure(bg="#3D3D3D")
 
 
 def order():
-    staff.destroy()
-    call(["python", "table.py"])
+    call(["python", "order.py"])
 
 
 def sign_out():

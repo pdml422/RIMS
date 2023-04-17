@@ -9,6 +9,7 @@ mm.title("Manage menu")
 mm.configure(bg='#3D3D3D')
 
 # function
+change_menu()
 
 
 def select_dish(event):
@@ -78,6 +79,7 @@ def add_dish():
     dish_list.append(Dish(category, name, price, sold))
     clear()
     display()
+    change_menu()
 
 
 def update():
@@ -106,16 +108,14 @@ def update():
 
     lines[selected] = ""
     lines[selected] = f"{category},{name},{price},{sold}\n"
-    dish_list[selected].set_category(category)
-    dish_list[selected].set_name(name)
-    dish_list[selected].set_price(price)
-    dish_list[selected].set_sold(sold)
 
     with open("data/menu.txt", "w") as f:
         for line in lines:
             f.write(line)
 
     display()
+    change_menu()
+    clear()
 
 
 def remove():
@@ -129,6 +129,7 @@ def remove():
     del dish_list[selected]
     clear()
     display()
+    change_menu()
 
 
 def back():

@@ -27,12 +27,18 @@ class Dish:
         return self.__price
 
     def _get_sold(self):
-        return self.__sold
+        return int(self.__sold)
+
 
 dish_list = []
-with open("data/menu.txt", "r") as f:
-    lines = f.readlines()
-    for line in lines:
-        fields = line.split(",")
-        dish = Dish(fields[0], fields[1], fields[2], fields[3])
-        dish_list.append(dish)
+dish_list_sorted = []
+
+
+def change_menu():
+    dish_list.clear()
+    with open("data/menu.txt") as f:
+        lines = f.readlines()
+        for line in lines:
+            fields = line.split(",")
+            dish = Dish(fields[0], fields[1], fields[2], fields[3])
+            dish_list.append(dish)

@@ -35,7 +35,27 @@ with open("data/order.txt") as f:
         total += float(price) * int(quantity)
 
 Label(bill, bg='#3D3D3D', fg='#FFD154', text=f"TOTAL: {total}").place(x=800, y=500)
+
+
 f = open("data/order.txt", "w")
 f.close()
+
+bill_date = time.strftime("%d/%m/%Y", time.localtime())
+with open("data/total.txt") as f:
+    lines = f.readlines()
+    idx = len(lines) - 1
+    fields = lines[idx].split(",")
+    last_date = fields[0]
+    total_old = fields[1]
+
+if bill_date == last_date:
+    lines[idx] = f"{bill_date},{float(total_old) + float(total)}\n"
+    with open("data/total.txt", "w") as f:
+        for line in lines:
+            f.write(line)
+else:
+    with open("data/total.txt", "a") as f:
+        f.write(f"{bill_date},{float(total)}\n")
+
 
 bill.mainloop()
