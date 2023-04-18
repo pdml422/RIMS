@@ -36,9 +36,7 @@ def clear():
     category_entry.delete(0, END)
     name_entry.delete(0, END)
     price_entry.delete(0, END)
-    sold_entry.configure(state=NORMAL)
     sold_entry.delete(0, END)
-    sold_entry.configure(state=DISABLED)
 
 
 def display():
@@ -107,7 +105,7 @@ def update():
         lines = f.readlines()
 
     lines[selected] = ""
-    lines[selected] = f"{category},{name},{price},{sold}\n"
+    lines[selected] = f"{category},{name},{price},{sold}"
 
     with open("data/menu.txt", "w") as f:
         for line in lines:

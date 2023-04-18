@@ -55,7 +55,7 @@ password_label.grid(row=3, column=0)
 password_entry = Entry(Frame, show='*')
 password_entry.grid(row=3, column=1)
 
-label1 = Label(login, bg='#3D3D3D', fg='#FFD154', text="Restaurant management", font=('Times New Roman', 35))
+label1 = Label(login, bg='#3D3D3D', fg='#FFD154', text="Restaurant 13", font=('Times New Roman', 35))
 label1.pack()
 
 label2 = Label(login, bg='#3D3D3D', fg='#FFD154', text="Login form", font=('Times New Roman', 25))

@@ -152,7 +152,7 @@ def update():
         lines = f.readlines()
 
     lines[selected] = ""
-    lines[selected] = f"{name},{dob},{username},{password},{role},{coesalary},{worktime},{bonus},{salary}\n"
+    lines[selected] = f"{name},{dob},{username},{password},{role},{coesalary},{worktime},{bonus},{salary}"
 
     with open("data/users.txt", "w") as f:
         for line in lines:
@@ -225,7 +225,7 @@ password_entry = Entry(ms)
 password_entry.grid(row=1, column=4)
 # Coesalary
 coesalary_text = StringVar()
-coesalary_label = Label(ms, text='Coesalary', font=('bold', 14), pady=15, bg='#3D3D3D', fg='#FFD154')
+coesalary_label = Label(ms, text='Coefficients salary', font=('bold', 14), pady=15, bg='#3D3D3D', fg='#FFD154')
 coesalary_label.grid(row=2, column=3, sticky=E)
 coesalary_entry = Entry(ms)
 coesalary_entry.grid(row=2, column=4)

@@ -27,7 +27,7 @@ def checkin():
     label1.pack()
     global time1
     time1 = time_string.tm_sec + time_string.tm_min * 60 + time_string.tm_hour * 3600
-    with open(f"data/{fields[1]}.txt", "a") as f:
+    with open(f"worktime/{fields[0]}.txt", "a") as f:
         f.write(f"Check in:{time_start}\n")
 
 
@@ -47,9 +47,9 @@ def checkout():
     count1 = "%d:%02d:%02d" % (hour, minutes, seconds)
     label2 = Label(staff, bg="#3D3D3D", fg="#FFD154", text=f"You have work for {count1}")
     label2.pack()
-    with open(f"data/{fields[1]}.txt", "a") as f:
+    with open(f"worktime/{fields[0]}.txt", "a") as f:
         f.write(f"Check out:{time_end}\n")
-        f.write(f"Worked for:{count1}")
+        f.write(f"Worked for:{count1}\n")
 
 
 file = open("data/log.txt")
